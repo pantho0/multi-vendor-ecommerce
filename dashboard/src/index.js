@@ -1,15 +1,17 @@
-import React, { lazy } from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import {RouterProvider} from 'react-router-dom';
-import router from './router/Router';
-import App from './App';
+import React, { lazy,Suspense } from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import { RouterProvider } from "react-router-dom";
+import router from "./router/Router";
+const App = lazy(()=>import('./App'))
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <RouterProvider router={router}>
-    <App />
+    <Suspense>
+      <App />
+    </Suspense>
   </RouterProvider>
 );
 
