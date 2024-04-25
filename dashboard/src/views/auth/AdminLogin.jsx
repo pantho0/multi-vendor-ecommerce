@@ -1,8 +1,15 @@
 import React, { useState } from "react";
+import Logo from '../../assets/images/logo.png'
+
+import { admin_login } from "../../store/Reducers/authReducer";
+import { useDispatch } from 'react-redux';
+
+
 
 
 
 const AdminLogin = () => {
+  const dispatch = useDispatch()
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -17,7 +24,8 @@ const AdminLogin = () => {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(state);
+    dispatch(admin_login(state))
+    // console.log(state);
   };
   return (
     <div className="min-w-full min-h-screen bg-[#cdcae9] flex justify-center items-center">
@@ -25,7 +33,7 @@ const AdminLogin = () => {
         <div className="bg-[#6f68d1] p-4 rounded-md">
           <div className="h-[70px] flex justify-center items-center">
             <div className="w-[180px] h-[50px]">
-                <img className="w-full" src='http://localhost:3000/images/logo.png' alt='Ecommerce Logo' />
+                <img className="w-full" src={Logo} alt='Ecommerce Logo' />
             </div>
           </div>
           <form onSubmit={submit}>
