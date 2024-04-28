@@ -1,8 +1,12 @@
 
 import { createBrowserRouter } from 'react-router-dom';
 import publicRoutes from './routes/publicRoutes';
-import privateRoutes from './routes/privateRoutes';
+import { useEffect } from 'react';
+import { getRoutes } from './routes';
 
-const router = createBrowserRouter([...publicRoutes, ...privateRoutes])
+const routes = getRoutes()
+
+
+const router = createBrowserRouter([...publicRoutes, routes])
 
 export default router;

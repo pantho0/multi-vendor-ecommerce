@@ -30,6 +30,26 @@ const authControllers = async (req, res) => {
   } catch (error) {
     responseReturn(res, 404, { error: 'Email Not Found' });
   }
+  // End method
+  getUser = async (req,res) =>{
+    const  {id, role} = req;
+
+    try {
+
+      if (role === 'admin') {
+        const user = await adminModel.findById(id)
+        responseReturn(res, 200, {userInfo : user})
+      }else{
+        console.log('seller info')
+      }
+      
+    } catch (error) {
+      console.log(error.message)
+    }
+  } //end getuser method
+
+
+
 };
 
 module.exports = authControllers;

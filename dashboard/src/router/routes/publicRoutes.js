@@ -7,10 +7,7 @@ import Home from "../../views/pages/Home/Home";
 
 
 const publicRoutes = [
-    {
-        path : '/',
-        element : <Home/>
-    },
+
     {
         path : '/login',
         element : <Login/>

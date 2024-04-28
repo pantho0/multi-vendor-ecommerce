@@ -1,9 +1,13 @@
-import { Outlet } from "react-router-dom";
+import { useEffect } from "react";
+import {getRoutes} from './router/routes'
+
 
 function App() {
+
+  
   return (
     <>
-      <Outlet />
+      
     </>
   );
 }
