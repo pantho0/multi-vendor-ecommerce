@@ -12,17 +12,17 @@ import { Toaster } from "react-hot-toast";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
+    <Toaster
+      toastOptions={{
+        position: "top-right",
+        style: {
+          background: "#283046",
+          color: "white",
+        },
+      }}
+    />
     <RouterProvider router={router}>
       <App />
-      <Toaster
-        toastOptions={{
-          position: "top-right",
-          style: {
-            background: "#283046",
-            color: "white",
-          },
-        }}
-      />
     </RouterProvider>
   </Provider>
 );
