@@ -1,6 +1,11 @@
 
 const authControllers = (req,res)=>{
-    console.log(req.body);
+    const {email, password} = req.body;
+    try {
+        
+    } catch (error) {
+        
+    }
 }
 
 module.exports = authControllers
