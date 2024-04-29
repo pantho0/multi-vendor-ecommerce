@@ -2,8 +2,8 @@ import { MdCurrencyExchange } from "react-icons/md";
 import { MdOutlineProductionQuantityLimits } from "react-icons/md";
 import Chart from "react-apexcharts";
 import { FaCartPlus, FaUsers } from "react-icons/fa";
-import { Link } from 'react-router-dom';
-import adminImg from '../../assets/images/admin.jpg'
+import { Link } from "react-router-dom";
+import adminImg from "../../assets/images/admin.jpg";
 const AdminDashboard = () => {
   const state = {
     series: [
@@ -151,8 +151,10 @@ const AdminDashboard = () => {
         <div className="w-full lg:w-5/12 lg:pl-4 mt-6 lg:mt-0">
           <div className="w-full bg-[#6a5fdf] p-4 rounded-md text-[#d0d2d6]">
             <div className="flex justify-between items-center">
-              <h2 className="font-semibold text-lg text-[#d0d2d6] pb-3">Recent Seller Message</h2>
-              <Link className="font-semibold text-sm text-[#d0d2d6]" to='/chat'>
+              <h2 className="font-semibold text-lg text-[#d0d2d6] pb-3">
+                Recent Seller Message
+              </h2>
+              <Link className="font-semibold text-sm text-[#d0d2d6]" to="/chat">
                 View All
               </Link>
             </div>
@@ -160,14 +162,18 @@ const AdminDashboard = () => {
               <ol className="relative border-1 border-slate-600 ml-4">
                 <li className="mb-3 ml-6">
                   <div className="flex absolute -left-5 shadow-lg justify-center items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10 ">
-                    <img className="w-full rounded-full h-full shadow-lg" src={adminImg} alt="" />
+                    <img
+                      className="w-full rounded-full h-full shadow-lg"
+                      src={adminImg}
+                      alt=""
+                    />
                   </div>
                   <div className="p-3 bg-slate-800 rounded-lg border-slate-600 shadow-sm">
                     <div className="flex justify-between items-center mb-2">
-                        <Link className="text-md font-normal ">
-                        ADMIN
-                        </Link>
-                        <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">2 days ago</time>
+                      <Link className="text-md font-normal ">ADMIN</Link>
+                      <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">
+                        2 days ago
+                      </time>
                     </div>
                     <div className="p-2 text-xs font-normal bg-slate-700 rounded-lg border-slate-800">
                       How Are you?
@@ -176,14 +182,18 @@ const AdminDashboard = () => {
                 </li>
                 <li className="mb-3 ml-6">
                   <div className="flex absolute -left-5 shadow-lg justify-center items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10 ">
-                    <img className="w-full rounded-full h-full shadow-lg" src={adminImg} alt="" />
+                    <img
+                      className="w-full rounded-full h-full shadow-lg"
+                      src={adminImg}
+                      alt=""
+                    />
                   </div>
                   <div className="p-3 bg-slate-800 rounded-lg border-slate-600 shadow-sm">
                     <div className="flex justify-between items-center mb-2">
-                        <Link className="text-md font-normal ">
-                        ADMIN
-                        </Link>
-                        <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">2 days ago</time>
+                      <Link className="text-md font-normal ">ADMIN</Link>
+                      <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">
+                        2 days ago
+                      </time>
                     </div>
                     <div className="p-2 text-xs font-normal bg-slate-700 rounded-lg border-slate-800">
                       How Are you?
@@ -192,14 +202,18 @@ const AdminDashboard = () => {
                 </li>
                 <li className="mb-3 ml-6">
                   <div className="flex absolute -left-5 shadow-lg justify-center items-center w-10 h-10 p-[6px] bg-[#4c7fe2] rounded-full z-10 ">
-                    <img className="w-full rounded-full h-full shadow-lg" src={adminImg} alt="" />
+                    <img
+                      className="w-full rounded-full h-full shadow-lg"
+                      src={adminImg}
+                      alt=""
+                    />
                   </div>
                   <div className="p-3 bg-slate-800 rounded-lg border-slate-600 shadow-sm">
                     <div className="flex justify-between items-center mb-2">
-                        <Link className="text-md font-normal ">
-                        ADMIN
-                        </Link>
-                        <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">2 days ago</time>
+                      <Link className="text-md font-normal ">ADMIN</Link>
+                      <time className="mb-1 text-sm font-normal sm:order-last sm:mb-0">
+                        2 days ago
+                      </time>
                     </div>
                     <div className="p-2 text-xs font-normal bg-slate-700 rounded-lg border-slate-800">
                       How Are you?
@@ -209,6 +223,129 @@ const AdminDashboard = () => {
               </ol>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="w-full p-4 bg-[#6a5fdf] rounded-md mt-6">
+        <div className="flex justify-between items-center">
+          <h2 className="font-semibold text-lg text-[#d0d2d6] pb-3">
+            Recent Orders
+          </h2>
+
+          <Link to="/viewall" className="font-semibold text-sm text-[#d0d2d6]">
+            View All
+          </Link>
+        </div>
+
+        <div className="relative overflow-x-auto">
+          <table className="w-full text-sm text-[#d0d2d6] text-left">
+            <thead className="text-sm text-[#d0d2d6] uppercase border-b border-slate-700">
+            <tr>
+              <th scope="col" className="py-3 px-4">
+                Order ID
+              </th>
+              <th scope="col" className="py-3 px-4">
+                Price
+              </th>
+              <th scope="col" className="py-3 px-4">
+                Payment Status
+              </th>
+              <th scope="col" className="py-3 px-4">
+                Order Status
+              </th>
+              <th scope="col" className="py-3 px-4">
+                Active
+              </th>
+            </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                #345454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                $454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+               Pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                view
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                #345454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                $454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+               Pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                view
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                #345454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                $454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+               Pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                view
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                #345454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                $454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+               Pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                view
+                </td>
+              </tr>
+              <tr>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                #345454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                $454
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+               Pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                pending
+                </td>
+                <td scope="row" className="py-3 px-4 font-medium whitespace-nowrap">
+                view
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
