@@ -4,14 +4,14 @@ export const allNav = [
     {
         id : 1,
         title : "Dashboard",
-        icons : <AiOutlineDashboard/>,
+        icon : <AiOutlineDashboard/>,
         role : 'admin',
         path : '/admin/dashboard'
     },
     {
         id : 1,
         title : "Dashboard",
-        icons : <AiOutlineDashboard/>,
+        icon : <AiOutlineDashboard/>,
         role : 'seller',
         path : '/admin/dashboard'
     }
