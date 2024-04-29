@@ -45,7 +45,27 @@ const AdminDashboard = () => {
             },
             legend : {
                 position : 'top'
-            }
+            },
+            responsive : [
+                {
+                    breakpoint : 565,
+                    yaxis :{
+                        categories : ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug','Sep', 'Oct', 'Nov', 'Dec']
+        
+                    },
+                    options : {
+                        plotOptions : {
+                            bar : {
+                                horizontal : true
+                            }
+                        },
+                        chart :{
+                            height : '550px'
+                        }
+                    }
+                }
+            ]
+            
         }
     }
 
