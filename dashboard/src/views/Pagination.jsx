@@ -1,4 +1,4 @@
-import { MdOutlineKeyboardDoubleArrowLeft } from "react-icons/md";
+import { MdOutlineKeyboardDoubleArrowLeft, MdOutlineKeyboardDoubleArrowRight } from "react-icons/md";
 const Pagination = ({
   pageNumber,
   setPageNumber,
@@ -38,11 +38,17 @@ const Pagination = ({
   return (
     <ul className="flex gap-3">
         {
-            pageNumber > 1 && <li className="w-[33px] h-[33px] rounded-full flex justify-center items-center bg-slate-300 text-[#03060a]">
+            pageNumber > 1 && <li onClick={()=>setPageNumber(pageNumber - 1)} className="w-[33px] h-[33px] rounded-full flex justify-center items-center bg-slate-300 text-[#03060a] cursor-pointer">
                 <MdOutlineKeyboardDoubleArrowLeft/>
             </li>
-        }{
+        }
+        {
             createBtn()
+        }
+        {
+            pageNumber < totalPage && <li onClick={()=>setPageNumber(pageNumber + 1)} className="w-[33px] h-[33px] rounded-full flex justify-center items-center bg-slate-300 text-[#03060a] cursor-pointer">
+                <MdOutlineKeyboardDoubleArrowRight/>
+            </li>
         }
     </ul>
   )
