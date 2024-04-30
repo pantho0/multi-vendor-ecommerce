@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import Pagination from "../Pagination";
 import img1 from "../../assets/images/category/1.jpg";
 import { FaEdit, FaTrash } from "react-icons/fa";
+import { BsImage } from "react-icons/bs";
 
 const Category = () => {
   const [show, setShow] = useState(false);
@@ -107,7 +108,25 @@ const Category = () => {
                     <form>
                         <div className="flex flex-col w-full gap-1 mb-3">
                         <label className="text-sm text-left font-normal" htmlFor="name">Category Name</label>
-                        <input className="px-4 py-2 focus:border-indigo-500 outline-none bg-white border border-slate-700 rounded-md text-[#d0d2d6]" type="text" id="name" name="category_name" placeholder="Category Name" />
+                        <input className="px-4 py-2 focus:border-indigo-500 outline-none bg-white border border-slate-700 rounded-md text-[#020408]" type="text" id="name" name="category_name" placeholder="Category Name" />
+                        </div>
+                        <div>
+                        <label className="flex justify-center items-center flex-col h-[238px] cursor-pointer border border-dashed hover:border-red-500 w-full border-[#d0d2d6]" htmlFor="image">
+                        <span>
+                            <BsImage/>
+                        </span>
+                        <span>
+                            Select Image
+                        </span>
+                        </label>
+                        <input className="hidden" type="file" name="image" id="image" />
+
+                        <div>
+                            <button className="bg-red-500 w-full hover:shadow-red-500/50 hover:shadow-md text-white rouded-md px-7 py-2 my-2">
+                                Add Category
+                            </button>
+                        </div>
+
                         </div>
                     </form>
 
