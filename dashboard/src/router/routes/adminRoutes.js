@@ -1,5 +1,6 @@
 import AdminDashboard from "../../views/admin/AdminDashboard";
 import Category from "../../views/admin/Category";
+import ChatSeller from "../../views/admin/ChatSeller";
 import DeactivateSellers from "../../views/admin/DeactivateSellers";
 import Orders from "../../views/admin/Orders";
 import PaymentRequest from "../../views/admin/PaymentRequest";
@@ -46,6 +47,11 @@ export const adminRoutes = [
   {
     path: "admin/dashboard/seller/details/:sellerId",
     element: <SellerDetails/>,
+    role: "admin",
+  },
+  {
+    path: "admin/dashboard/chat-seller",
+    element: <ChatSeller/>,
     role: "admin",
   }
 ];
