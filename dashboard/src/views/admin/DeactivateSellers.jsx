@@ -4,14 +4,14 @@ import { FaEye, FaTrash } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img1 from "../../assets/images/category/1.jpg";
 
-const Sellers = () => {
+const DeactivateSellers = () => {
     const [show, setShow] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchValue, setSearchValue] = useState("");
   const [perPage, setPerPage] = useState(5);
     return (
         <div className='px-2 lg:px-7 pt-5'>
-          <h1 className='text-[20px] font-bold mb-3'>Seller</h1>
+            <h1 className='text-[20px] font-bold mb-3'>Deactivate Seller</h1>
             <div className="w-full p-4 bg-[#6a5fdf] rounded-md">
             <div className="flex justify-between items-center">
               <select
@@ -43,19 +43,13 @@ const Sellers = () => {
                       Name
                     </th>
                     <th scope="col" className="py-3 px-4">
-                      Shop Name
+                     Email
                     </th>
                     <th scope="col" className="py-3 px-4">
                      Payment Status
                     </th>
                     <th scope="col" className="py-3 px-4">
-                     Email
-                    </th>
-                    <th scope="col" className="py-3 px-4">
-                     District
-                    </th>
-                    <th scope="col" className="py-3 px-4">
-                     Division
+                    Status
                     </th>
                     <th scope="col" className="py-3 px-4">
                      Action
@@ -87,7 +81,7 @@ const Sellers = () => {
                         scope="row"
                         className="py-1 px-4 font-medium whitespace-nowrap"
                       >
-                        Easy Shop
+                        panthomashreky6@gmail.com
                       </td>
                       <td
                         scope="row"
@@ -95,23 +89,12 @@ const Sellers = () => {
                       >
                         Pending
                       </td>
+
                       <td
                         scope="row"
                         className="py-1 px-4 font-medium whitespace-nowrap"
                       >
-                        panthomashreky6@gmail.com
-                      </td>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        Dhaka
-                      </td>
-                      <td
-                        scope="row"
-                        className="py-1 px-4 font-medium whitespace-nowrap"
-                      >
-                        Dhaka
+                        Deactive
                       </td>
                       <td
                         scope="row"
@@ -145,4 +128,4 @@ const Sellers = () => {
     );
 };
 
-export default Sellers;
+export default DeactivateSellers;

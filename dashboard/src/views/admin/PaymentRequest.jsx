@@ -59,7 +59,7 @@ const PaymentRequest = () => {
                 style={{minWidth : '340px'}}
                 className="List"
                 height={350}
-                itemCount={10}
+                itemCount={100}
                 itemSize={35}
                 outerElementType={outterElemenType}
                 >
