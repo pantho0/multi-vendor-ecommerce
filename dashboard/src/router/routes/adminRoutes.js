@@ -3,6 +3,7 @@ import Category from "../../views/admin/Category";
 import DeactivateSellers from "../../views/admin/DeactivateSellers";
 import Orders from "../../views/admin/Orders";
 import PaymentRequest from "../../views/admin/PaymentRequest";
+import SellerRequest from "../../views/admin/SellerRequest";
 import Sellers from "../../views/admin/Sellers";
 
 export const adminRoutes = [
@@ -34,6 +35,11 @@ export const adminRoutes = [
   {
     path: "admin/dashboard/deactive-sellers",
     element: <DeactivateSellers />,
+    role: "admin",
+  },
+  {
+    path: "admin/dashboard/sellers-request",
+    element: <SellerRequest />,
     role: "admin",
   },
 ];
