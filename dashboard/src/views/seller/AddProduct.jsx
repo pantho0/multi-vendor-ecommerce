@@ -68,10 +68,28 @@ const AddProduct = () => {
       const length = files.length;
       if (length > 0) {
         setImages([...images,...files])
+        let imageUrl = []
+        for (let i = 0; i < length; i++) {
+          imageUrl.push({url:URL.createObjectURL(files[i])})
+          
+        }
+        setImageShow([...imageShow, ...imageUrl])
       }
   }
 
-  console.log(images)
+  // console.log(images)
+  // console.log(imageShow)
+
+  const changeImage = (img, index)=>{
+    if(img){
+      let tempUrl = imageShow
+      let tempImges = images
+      tempImges[index] = img
+      tempUrl[index] = {url:URL.createObjectURL(img)}
+      setImageShow([...tempUrl])
+      setImages([...tempImges])
+    }
+  }
 
   return (
     <div className="px-2 lg:px-7 pt-5 ">
@@ -208,6 +226,14 @@ const AddProduct = () => {
             </div>
             
             <div className="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 gap-3 w-full text-[#d0d2d6] mb-5">
+              {
+                imageShow.map((img,i)=><div className="h-[180px] relative">
+                  <label htmlFor={i}>
+                    <img className="w-full h-full rounded-sm" src={img.url} alt="" />
+                    <input onChange={(e)=>changeImage(e.target.files[0],i)} type="file" id={i} className="hidden" />
+                  </label>
+                </div>)
+              }
                 <label className="flex justify-center items-center flex-col h-[180px] cursor-pointer border border-dashed hover:border-red-500 w-full text-[#d0d2d6]" htmlFor="image">
                   <span><BsImage/></span>
                   <span>Select Image</span>
