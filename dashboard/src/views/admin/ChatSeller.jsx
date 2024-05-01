@@ -98,6 +98,17 @@ const ChatSeller = () => {
                 </div>
 
               </div>
+              <div className="py-4 ">
+                  <div className="bg-[#435469] h-[calc(100vh-290px)] rounded-md p-3 overflow-y-auto">
+
+                  </div>
+              </div>
+              <form className="flex gap-3 ">
+                    <input className="w-full flex justify-between px-2 border-slate-700 items-center py-[5px] focus:border-red-500 rounded-md outline-none bg-transparent text-[#d0d2d6]" type="text" placeholder="input your message"/>
+                    <button className="shadow-lg bg-[#06b6d4] hover:shadow-cyan-500/50 font-semibold w-[75px] h-[35px] rounded-md text-white flex justify-center items-center">
+                      send
+                    </button> 
+              </form>
             </div>
       </div>
 
