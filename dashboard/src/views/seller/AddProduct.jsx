@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { BsImage } from 'react-icons/bs';
 
 const AddProduct = () => {
   const categories = [
@@ -59,6 +60,18 @@ const AddProduct = () => {
       setAllCategory(categories)
     }
   };
+
+  const [images, setImages] = useState([])
+  const [imageShow, setImageShow] = useState([])
+  const imageHandle = (e)=>{
+      const files = e.target.files;
+      const length = files.length;
+      if (length > 0) {
+        setImages([...images,...files])
+      }
+  }
+
+  console.log(images)
 
   return (
     <div className="px-2 lg:px-7 pt-5 ">
@@ -193,6 +206,15 @@ const AddProduct = () => {
                 </textarea>
               </div>
             </div>
+            
+            <div className="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 gap-3 w-full text-[#d0d2d6] mb-5">
+                <label className="flex justify-center items-center flex-col h-[180px] cursor-pointer border border-dashed hover:border-red-500 w-full text-[#d0d2d6]" htmlFor="image">
+                  <span><BsImage/></span>
+                  <span>Select Image</span>
+                </label>
+                <input onChange={imageHandle} className="hidden" multiple type="file" id="image" />
+            </div>
+
           </form>
         </div>
       </div>
