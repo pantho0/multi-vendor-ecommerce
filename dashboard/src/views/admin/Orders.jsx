@@ -57,7 +57,7 @@ const Orders = () => {
                   Pending
                 </div>
                 <div className="py-3 w-[18%] font-medium whitespace-nowrap">
-                  <Link>View All</Link>
+                  <Link to='/admin/dashboard/order/details/3'>View All</Link>
                 </div>
                 <div
                   onClick={(e) => setShow(!show)}
