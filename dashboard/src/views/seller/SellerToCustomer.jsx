@@ -90,6 +90,7 @@ const SellerToCustomer = () => {
                     />
                     <div className="w-[10px] h-[10px] rounded-full bg-green-500 absolute right-0 bottom-0"></div>
                   </div>
+                  <h2 className="text-[#d0d2d6] text-base font-semibold">Pantho Mashreky</h2>
                 </div>
               )}
               <div
