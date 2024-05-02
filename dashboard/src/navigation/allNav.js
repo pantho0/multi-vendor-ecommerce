@@ -4,6 +4,7 @@ import { FaUserTimes, FaUsers } from "react-icons/fa";
 import { MdPayment } from "react-icons/md";
 import { FaCodePullRequest } from "react-icons/fa6";
 import { IoChatbubbles } from "react-icons/io5";
+import { ImProfile } from "react-icons/im";
 export const allNav = [
     {
         id : 1,
@@ -116,6 +117,13 @@ export const allNav = [
         icon : <AiOutlineDashboard/>,
         role : 'seller',
         path : '/seller/dashboard/chat-support'
+    },
+    {
+        id : 17,
+        title : "Profile",
+        icon : <ImProfile/>,
+        role : 'seller',
+        path : '/seller/dashboard/profile'
     },
 
 
