@@ -3,7 +3,7 @@ import { IoIosCloseCircle } from "react-icons/io";
 import img1 from "../../assets/images/admin.jpg";
 import img2 from "../../assets/images/demo.jpg";
 import { FaList } from "react-icons/fa";
-const ChatSeller = () => {
+const SellerToCustomer = () => {
   const [show, setShow] = useState(false);
   const sellerId = 65;
   return (
@@ -17,7 +17,7 @@ const ChatSeller = () => {
           >
             <div className="w-full h-[calc(100vh-177px)] bg-[#9e97e9] md:bg-transparent overflow-y-auto">
               <div className="flex tex-xl justify-between items-center p-4 md:p-0 md:px-3 md:pb-3 text-white">
-                <h2>Sellers</h2>
+                <h2>Customers</h2>
                 <span
                   onClick={() => setShow(!show)}
                   className="block cursor-pointer md:hidden"
@@ -150,4 +150,4 @@ const ChatSeller = () => {
   );
 };
 
-export default ChatSeller;
+export default SellerToCustomer;

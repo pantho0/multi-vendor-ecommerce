@@ -5,6 +5,8 @@ import Orders from "../../views/seller/Orders";
 import Payments from "../../views/seller/Payments";
 import Products from "../../views/seller/Products";
 import SellerDashboard from "../../views/seller/SellerDashboard";
+import SellerToAdmin from "../../views/seller/SellerToAdmin";
+import SellerToCustomer from "../../views/seller/SellerToCustomer";
 
 export const sellerRoutes = [
   {
@@ -45,6 +47,24 @@ export const sellerRoutes = [
   {
     path: "/seller/dashboard/payments",
     element: <Payments/>,
+    role: "seller",
+    status: 'active'
+  },
+  {
+    path: "/seller/dashboard/chat-customer/:customerId",
+    element: <SellerToCustomer/>,
+    role: "seller",
+    ability: ['active', 'deactive','pending']
+  },
+  {
+    path: "/seller/dashboard/chat-support",
+    element: <SellerToAdmin/>,
+    role: "seller",
+    status: 'active'
+  },
+  {
+    path: "/seller/dashboard/chat-customer",
+    element: <SellerToCustomer/>,
     role: "seller",
     status: 'active'
   },
