@@ -1,9 +1,28 @@
-import React from "react";
-import { FaCartPlus, FaUsers } from "react-icons/fa";
-import {
-  MdCurrencyExchange,
-  MdOutlineProductionQuantityLimits,
-} from "react-icons/md";
+import { forwardRef } from "react";
+import { FixedSizeList as List } from "react-window";
+import { MdCurrencyExchange } from "react-icons/md";
+
+const handleOnWheel = ({ deltaY }) => {
+  console.log(deltaY);
+};
+
+const outterElemenType = forwardRef((props, ref) => (
+  <div ref={ref} onWheel={handleOnWheel} {...props} />
+));
+const Row = ({ index, style }) => {
+  return (
+    <div style={style} className="flex text-sm text-white font-medium">
+      <div className="w-[25%] p-2 whitespace-nowrap">{index + 1}</div>
+      <div className="w-[25%] p-2 whitespace-nowrap">$3445</div>
+      <div className="w-[25%] p-2 whitespace-nowrap">
+        <span className="py-[1px] px-[5px] bg-slate-300 text-blue-500 rounded-md text-sm">
+          Pending
+        </span>
+      </div>
+      <div className="w-[25%] p-2 whitespace-nowrap">25 April 2024</div>
+    </div>
+  );
+};
 
 const Payments = () => {
   return (
@@ -69,8 +88,56 @@ const Payments = () => {
           </div>
           <div>
             <h2 className="text-lg pb-4">Pending request</h2>
+            <div className="w-full overflow-x-auto">
+              <div className="flex bg-[#A7A6DF] uppercase text-xs font-bold min-w-[340px] rounded-md">
+                <div className="w-[25%] p-2">no</div>
+                <div className="w-[25%] p-2">amount</div>
+                <div className="w-[25%] p-2">status</div>
+                <div className="w-[25%] p-2">date</div>
+              </div>
+              {
+                <List
+                  style={{ minWidth: "340px" }}
+                  className="List"
+                  height={350}
+                  itemCount={10}
+                  itemSize={35}
+                  outerElementType={outterElemenType}
+                >
+                  {Row}
+                </List>
+              }
+            </div>
           </div>
         </div>
+
+        <div className="bg-[#6A5FDF] text-[#d0d2d6] rounded-md p-5 ">
+          <h2 className="text-lg mb-5">Success Withdrawal</h2>
+          
+          <div>
+            <div className="w-full overflow-x-auto">
+              <div className="flex bg-[#A7A6DF] uppercase text-xs font-bold min-w-[340px] rounded-md">
+                <div className="w-[25%] p-2">no</div>
+                <div className="w-[25%] p-2">amount</div>
+                <div className="w-[25%] p-2">status</div>
+                <div className="w-[25%] p-2">date</div>
+              </div>
+              {
+                <List
+                  style={{ minWidth: "340px" }}
+                  className="List"
+                  height={350}
+                  itemCount={10}
+                  itemSize={35}
+                  outerElementType={outterElemenType}
+                >
+                  {Row}
+                </List>
+              }
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   );
