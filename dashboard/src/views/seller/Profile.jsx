@@ -6,10 +6,10 @@ const Profile = () => {
   const image = true;
   const loader = true;
   const status = "active";
-  const userInfo = true;
+  const userInfo = false;
   return (
     <div className="px-2 lg:px-7 pt-5">
-      <div className="w-full flex flex-wrap">
+      <div className="w-full flex gap-3">
         <div className="w-full md:w-6/12">
           <div className="w-full p-4 bg-[#6A5FDF] rounded-md text-[#d0d2d6]">
             <div className="flex justify-center items-center py-3">
@@ -88,7 +88,7 @@ const Profile = () => {
             </div>
 
             <div className="px-0 md:pl-5 py-2">
-              {!userInfo && (
+              {!userInfo ? (
                 <form>
                   <div className="flex flex-col w-full gap-1 mb-2">
                     <label htmlFor="shop">Shop Name</label>
@@ -131,14 +131,79 @@ const Profile = () => {
                     />
                   </div>
                   <button className="bg-red-500 hover:shadow-red-500/50 hover:shadow-md text-white rouded-md px-7 py-2 my-2">
-                Save Changes
-              </button>
+                    Save Changes
+                  </button>
                 </form>
+              ) : (
+                <div className="flex justify-between text-sm flex-col gap-2 p-4 bg-slate-800 rounded-md relative">
+                  <span className="p-[6px] bg-yellow-500 rounded hover:shadow-lg hover:shadow-yellow-500/50 absolute right-2 top-2 cursor-pointer">
+                    {" "}
+                    <FaRegEdit />{" "}
+                  </span>
+                  <div className="flex gap-2">
+                    <span>Shop Name :</span>
+                    <span>Easy Shop</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span>Division :</span>
+                    <span>Dhaka</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span>District :</span>
+                    <span>Dhaka</span>
+                  </div>
+                  <div className="flex gap-2">
+                    <span>Sub Dist :</span>
+                    <span>Dhaka</span>
+                  </div>
+                </div>
               )}
             </div>
           </div>
         </div>
-        <div className="w-full md:w-6/12">tew</div>
+        <div className="w-full md:w-6/12">
+          <div className="w-full pl-0 md:pl-7 mt-6 md:mt-0 bg-[#6A5FDF] rounded-md text-[#d0d2d6] ">
+            <div className="bg-[#6A5FDF] rounded-md text-[#d0d2d6] p-4">
+              <h1 className="text-[#d0d2d6] text-lg mb-3 font-semibold">Change Password</h1>
+              <form>
+                <div className="flex flex-col w-full gap-1 mb-2">
+                  <label htmlFor="email">EMail</label>
+                  <input
+                    className="px-4 py-2 border focus:border-indigo-500 outline-none bg-white  border-slate-700 rounded-md text-[#020408]"
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Email"
+                  />
+                </div>
+                <div className="flex flex-col w-full gap-1 mb-2">
+                  <label htmlFor="old">Old Password</label>
+                  <input
+                    className="px-4 py-2 border focus:border-indigo-500 outline-none bg-white  border-slate-700 rounded-md text-[#020408]"
+                    type="password"
+                    name="old"
+                    id="old"
+                    placeholder="Old Password"
+                  />
+                </div>
+                <div className="flex flex-col w-full gap-1 mb-2">
+                  <label htmlFor="new">New Password</label>
+                  <input
+                    className="px-4 py-2 border focus:border-indigo-500 outline-none bg-white  border-slate-700 rounded-md text-[#020408]"
+                    type="password"
+                    name="new"
+                    id="new"
+                    placeholder="Old Password"
+                  />
+                </div>
+                
+                <button className="bg-red-500 hover:shadow-red-500/50 hover:shadow-md text-white rouded-md px-7 py-2 my-2">
+                  Save Changes
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
