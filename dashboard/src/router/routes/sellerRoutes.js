@@ -1,6 +1,7 @@
 import Home from "../../views/pages/Home/Home";
 import AddProduct from "../../views/seller/AddProduct";
 import DiscountProducts from "../../views/seller/DiscountProducts";
+import EditProduct from "../../views/seller/EditProduct";
 import Orders from "../../views/seller/Orders";
 import Payments from "../../views/seller/Payments";
 import Products from "../../views/seller/Products";
@@ -72,6 +73,12 @@ export const sellerRoutes = [
   {
     path: "/seller/dashboard/profile",
     element: <Profile/>,
+    role: "seller",
+    status: 'active'
+  },
+  {
+    path: "/seller/dashboard/edit-product/:productId",
+    element: <EditProduct/>,
     role: "seller",
     status: 'active'
   },

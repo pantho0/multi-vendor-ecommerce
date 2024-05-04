@@ -9,7 +9,7 @@ const Profile = () => {
   const userInfo = false;
   return (
     <div className="px-2 lg:px-7 pt-5">
-      <div className="w-full flex gap-3">
+      <div className="w-full flex flex-col md:flex-row gap-3">
         <div className="w-full md:w-6/12">
           <div className="w-full p-4 bg-[#6A5FDF] rounded-md text-[#d0d2d6]">
             <div className="flex justify-center items-center py-3">
