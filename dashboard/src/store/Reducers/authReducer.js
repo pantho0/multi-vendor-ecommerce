@@ -57,9 +57,10 @@ export const seller_login = createAsyncThunk(
 export const get_user_info = createAsyncThunk(
     'auth/get_user_info',
     async(_, {rejectWithValue, fulfillWithValue}) =>{
+        
         try{
-            const {data} = await api.get('/get-info',{withCredentials:true})
-            // console.log(data)
+            const {data} = await api.get('/get-user',{withCredentials:true})
+            console.log(data)
             return fulfillWithValue(data)
         }catch(error){
             // console.log(error.response.data);
@@ -94,7 +95,7 @@ export const authReducer = createSlice({
         loader : false,
         userInfo : "",
         role : returnRole(localStorage.getItem('accessToken')),
-        token : ""
+        token : localStorage.getItem('accessToken')
     },
     reducers : {
         messageClear : (state,_)=>{
@@ -146,13 +147,15 @@ export const authReducer = createSlice({
         .addCase(seller_login.fulfilled, (state,{payload})=>{
             state.loader = false;
             state.successMessage = payload.message
+            state.token = payload.token
+            state.role = returnRole(payload.token)
         })
         //
         .addCase(get_user_info.fulfilled, (state,{payload})=>{
             state.loader = false;
             state.userInfo = payload.userInfo
-            state.token = payload.token
-            state.role = returnRole(payload.token)
+            // state.token = payload.token
+            // state.role = returnRole(payload.token)
         })
     }
 })
