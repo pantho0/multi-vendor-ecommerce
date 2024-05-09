@@ -2,6 +2,7 @@ import Home from "../../views/pages/Home/Home";
 import AddProduct from "../../views/seller/AddProduct";
 import DiscountProducts from "../../views/seller/DiscountProducts";
 import EditProduct from "../../views/seller/EditProduct";
+import OrderDetails from "../../views/seller/OrderDetails";
 import Orders from "../../views/seller/Orders";
 import Payments from "../../views/seller/Payments";
 import Products from "../../views/seller/Products";
@@ -47,6 +48,12 @@ export const sellerRoutes = [
     ability: ['active', 'deactive']
   },
   {
+    path: "/seller/dashboard/orders/details/:orderId",
+    element: <OrderDetails/>,
+    role: "seller",
+    ability: ['active', 'deactive']
+  },
+  {
     path: "/seller/dashboard/payments",
     element: <Payments/>,
     role: "seller",
@@ -82,4 +89,5 @@ export const sellerRoutes = [
     role: "seller",
     status: 'active'
   },
+
 ];
