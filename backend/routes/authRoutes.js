@@ -1,10 +1,10 @@
 const express = require('express');
 const authControllers = require('../controllers/authControllers');
 const { authMiddleware } = require('../middleware/authMiddleware');
-const router = express.Router()
+const router = express.Router();
 
+router.post('/api/admin-login', authControllers.auth);
+router.post('/api/seller-register', authControllers.seller_register);
+router.get('/api/get-user', authMiddleware, authControllers.getUser);
 
-router.post('/api/admin-login', authControllers)
-// router.get('/api/get-user', authMiddleware, authControllers.getUser)
- 
-module.exports = router
+module.exports = router;
