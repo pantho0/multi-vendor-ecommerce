@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import {PropagateLoader} from 'react-spinners'
 import toast from 'react-hot-toast'
 import { useNavigate } from "react-router-dom";
+import { overrideStyle } from "../../utils/utils";
 
 
 
@@ -31,13 +32,6 @@ const AdminLogin = () => {
     // console.log(state);
   };
 
-  const overrideStyle = {
-      display : 'flex',
-      margin : '0 auto',
-      height : '20px',
-      justifyContent : 'center',
-      alignItem : 'center'
-  }
 
   useEffect(()=>{
     if (errorMessage) {
@@ -91,7 +85,7 @@ const AdminLogin = () => {
               {
                 loader ? <PropagateLoader color="white" cssOverride={overrideStyle} />
                 :
-                'Log In'
+                'LogIn'
               }
             </button>
           </form>
