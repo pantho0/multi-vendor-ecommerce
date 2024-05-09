@@ -66,55 +66,33 @@ const EditProduct = () => {
 
   const [images, setImages] = useState([]);
   const [imageShow, setImageShow] = useState([]);
-  const imageHandle = (e) => {
-    const files = e.target.files;
-    const length = files.length;
-    if (length > 0) {
-      setImages([...images, ...files]);
-      let imageUrl = [];
-      for (let i = 0; i < length; i++) {
-        imageUrl.push({ url: URL.createObjectURL(files[i]) });
-      }
-      setImageShow([...imageShow, ...imageUrl]);
-    }
-  };
 
   // console.log(images)
   // console.log(imageShow)
 
-  const changeImage = (img, index) => {
-    if (img) {
-      let tempUrl = imageShow;
-      let tempImges = images;
-      tempImges[index] = img;
-      tempUrl[index] = { url: URL.createObjectURL(img) };
-      setImageShow([...tempUrl]);
-      setImages([...tempImges]);
+  const changeImage = (img, files) => {
+    if (files.length > 0) {
+      console.log(img);
+      console.log(files[0]);
     }
-  };
-
-  const removeImage = (i) => {
-    const filterImage = images.filter((img, index) => index !== i);
-    const filterImageUrl = imageShow.filter((img, index) => index !== i);
-    setImages(filterImage);
-    setImageShow(filterImageUrl);
   };
 
   useEffect(() => {
     setState({
       name: "Men's T-shirt",
-      description: "Kickboxing boxing material arts T shirt for men Cotton crazy T-shirts round collar kickboxing tee shirt short sleeve tops summer",
+      description:
+        "Kickboxing boxing material arts T shirt for men Cotton crazy T-shirts round collar kickboxing tee shirt short sleeve tops summer",
       discount: 10,
       price: 255,
       brand: "Easy",
       stock: 10,
-    })
-    setCategory('Tshirt');
+    });
+    setCategory("Tshirt");
     setImageShow([
-        'https://contents.mediadecathlon.com/p2567760/06cf21e3f5a8a75af7ac0659729255e7/p2567760.jpg',
-        'https://static-01.daraz.com.bd/p/38a8e822da9fe774e7381188a8db832a.jpg',
-        'https://fabrilife.com/products/628f71c9a6ae3-square.jpg?v=20'
-    ])
+      "http://localhost:3000/static/media/admin.1424ada61e2a1cea2e87.jpg",
+      "http://localhost:3000/static/media/admin.1424ada61e2a1cea2e87.jpg",
+      "http://localhost:3000/static/media/admin.1424ada61e2a1cea2e87.jpg",
+    ]);
   }, []);
 
   return (
@@ -261,44 +239,19 @@ const EditProduct = () => {
 
             <div className="grid lg:grid-cols-4 grid-cols-1 md:grid-cols-3 sm:grid-cols-2 sm:gap-4 md:gap-4 gap-3 w-full text-[#d0d2d6] mb-5">
               {imageShow.map((img, i) => (
-                <div className="h-[180px] relative">
+                <div>
                   <label htmlFor={i}>
-                    <img
-                      className="w-full h-full rounded-sm"
-                      src={img.url}
-                      alt=""
-                    />
+                    <img src={img} alt="" />
                   </label>
                   <input
-                    onChange={(e) => changeImage(e.target.files[0], i)}
-                    type="file"
-                    id={i}
+                    onChange={(e) => changeImage(img, e.target.files)}
                     className="hidden"
+                    type="file"
+                    name=""
+                    id={i}
                   />
-                  <span
-                    onClick={() => removeImage(i)}
-                    className="p-2 z-10 cursor-pointer bg-slate-700 hover:shadow-lg hover:shadow-slate-400/50 text-white absolute top-1 rounded-full right-1"
-                  >
-                    <IoIosCloseCircle />
-                  </span>
                 </div>
               ))}
-              <label
-                className="flex justify-center items-center flex-col h-[180px] cursor-pointer border border-dashed hover:border-red-500 w-full text-[#d0d2d6]"
-                htmlFor="image"
-              >
-                <span>
-                  <BsImage />
-                </span>
-                <span>Select Image</span>
-              </label>
-              <input
-                onChange={imageHandle}
-                className="hidden"
-                multiple
-                type="file"
-                id="image"
-              />
             </div>
             <div className="flex">
               <button className="bg-red-500 hover:shadow-red-500/50 hover:shadow-md text-white rouded-md px-7 py-2 my-2">
