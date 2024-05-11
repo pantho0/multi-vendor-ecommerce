@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FaGoogle } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
 import {PropagateLoader} from 'react-spinners'
@@ -10,6 +10,7 @@ import { seller_login, messageClear, get_user_info } from "../../store/Reducers/
 
 const Login = () => {
   const dispatch = useDispatch()
+  const navigate = useNavigate()
   const {loader, errorMessage,successMessage, token} = useSelector(state=>state.auth)
   const [state, setState] = useState({
     email: "",
@@ -36,8 +37,9 @@ const Login = () => {
     if (successMessage) {
       toast.success(successMessage)
       dispatch(messageClear())
+      navigate('/')
     }
-  },[successMessage,errorMessage, dispatch])
+  },[successMessage,errorMessage, dispatch, navigate])
 
   useEffect(()=>{
     if(token){

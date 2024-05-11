@@ -1,4 +1,3 @@
-import Home from "../../views/pages/Home/Home";
 import AddProduct from "../../views/seller/AddProduct";
 import DiscountProducts from "../../views/seller/DiscountProducts";
 import EditProduct from "../../views/seller/EditProduct";
@@ -12,11 +11,7 @@ import SellerToAdmin from "../../views/seller/SellerToAdmin";
 import SellerToCustomer from "../../views/seller/SellerToCustomer";
 
 export const sellerRoutes = [
-  {
-    path: "/",
-    element: <Home />,
-    ability: ["admin", "seller"],
-  },
+  
   {
     path: "/seller/dashboard",
     element: <SellerDashboard />,
