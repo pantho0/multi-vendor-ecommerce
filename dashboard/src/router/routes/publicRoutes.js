@@ -1,3 +1,4 @@
+import Unauthorized from "../../views/Unauthorized";
 import AdminLogin from "../../views/auth/AdminLogin";
 import Login from "../../views/auth/Login";
 import Register from "../../views/auth/Register";
@@ -21,6 +22,10 @@ const publicRoutes = [
   {
     path: "/admin/login",
     element: <AdminLogin />,
+  },
+  {
+    path: "/unauthorized",
+    element: <Unauthorized />,
   },
 ];
 
